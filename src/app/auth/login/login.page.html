@@ -23,8 +23,9 @@
         <ion-button type="submit" color="danger" expand="block">Sign In</ion-button>
         <ion-row>
           <ion-col>
-            <ion-button [routerLink]="['/auth/forgot-password']" class="small-text">Forgot Password?</ion-button>
+            <ion-button [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</ion-button>
           </ion-col>
           </ion-row>
   </form>
+  <router-outlet></router-outlet>
 </ion-content>
