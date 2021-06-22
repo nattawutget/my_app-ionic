@@ -1,0 +1,16 @@
+<ion-content class="auth-form">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button [routerLink]="['/register']" expand="block" color="primary">Register</ion-button>
+
+        <ion-row fxLayoutAlign="center">
+          <span style="padding-left: 85px;" class="already"> Already a user?</span>
+        </ion-row>
+
+
+        <ion-button [routerLink]="['/login']" expand="block" color="danger">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
