@@ -23,10 +23,7 @@ const routes: Routes = [
     path: 'forgot-password',
     loadChildren: () => import('./auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
   },
-  {
-    path: 'productdetail',
-    loadChildren: () => import('./productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
-  }
+  
 
 ];
 
