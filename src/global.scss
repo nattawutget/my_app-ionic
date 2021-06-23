@@ -26,3 +26,27 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
+.ion-color-mytheme {
+  --ion-color-base: var(--ion-color-mytheme) !important;
+  --ion-color-base-rgb: var(--ion-color-mytheme-rgb) !important;
+  --ion-color-contrast: var(--ion-color-mytheme-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-mytheme-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-mytheme-shade) !important;
+  --ion-color-tint: var(--ion-color-mytheme-tint) !important;
+}
+.ion-color-google {
+  --ion-color-base: var(--ion-color-google) !important;
+  --ion-color-base-rgb: var(--ion-color-google-rgb) !important;
+  --ion-color-contrast: var(--ion-color-google-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-google-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-google-shade) !important;
+  --ion-color-tint: var(--ion-color-google-tint) !important;
+}
+.line {
+  width: 75%;
+  height: 1px;
+  background: #989aa2;
+  margin: 1px auto 1px auto;
+  margin-top: 0.4cm;
+  position: relative;
+}

@@ -1,14 +1,26 @@
-.already{
-  text-align: center;
+.head-image{
+  height: 250px;
+  width: 250px;
+  margin: auto;
 }
-.small-text{
-  margin-left:160px;
+.auth-form{
+  align-self: center;
+}
+.logo{
+  width: 1.25em;
+}
+
+.forgotpassword-text{
+  margin-left:185px;
+  font-size: small;
 }
 .loginbt{
   margin-top: 0.5cm;
   margin-bottom: 0.2cm;
 }
-.homeh{
-  // --ion-background-color:rgb(214, 127, 46);
-  background-color: sandybrown;
+.fgbt{
+  margin-top: 0.1cm;
+}
+.head{
+  margin-bottom: -0.3cm;
 }
