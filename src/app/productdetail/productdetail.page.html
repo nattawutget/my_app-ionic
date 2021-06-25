@@ -1,0 +1,66 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title  class="texttitle">รายละเอียดสินค้า</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="cart" slot="icon-only" defaultHref="ใส่พาร์ทตะกร้า" class="tobbtn"></ion-icon>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-icon name="search" slot="icon-only" defaultHref="ใส่พาร์ทเซิร์ท" class="tobbtn" ></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- <ion-row>
+    <ion-segment class="button" *ngFor="let i of itemTab">
+      <ion-segment-button>
+      <ion-lable>{{i.title}}</ion-lable>
+      </ion-segment-button>
+      </ion-segment>
+    </ion-row> -->
+
+    <!-- <ion-toolbar >
+      <ion-segment (ionChange)="seg($event)" mode="md" scrollable="true" id="dag" class="segSection">
+        <ion-segment-button [attr.id]="'seg_' + i" *ngFor="let item of data; let i = index;" no-margin no-padding (ionSelect)="update(i)" class="my-btn"
+          [value]="item.title" [ngClass]="{'btn-active':menu == item.title}">
+          <ion-text padding-horizontal class="text">{{item.title}}</ion-text>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar> -->
+
+      <!-- <ion-toolbar >
+      <ion-segment (ionChange)="seg($event)" mode="md" scrollable="true" id="dag" class="segSection">
+        <ion-segment-button *ngFor="let item of data;" no-margin no-padding class="my-btn"
+          [value]="item.title" [ngClass]="{'btn-active':menu == item.title}">
+          <ion-text padding-horizontal class="text">{{item.title}}</ion-text>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar> -->
+
+    <ion-toolbar>
+      <ion-segment  mode="md" scrollable="true">
+        <ion-segment-button *ngFor="let item of data;">
+          <ion-text>{{item.title}}</ion-text>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <ion-img src="https://i.ytimg.com/vi/oxmb4oVP2CA/maxresdefault.jpg" ></ion-img>
+      </ion-slide>
+      <ion-slide>
+       <ion-img src="https://i.ytimg.com/vi/IPRsiRFoo3Q/maxresdefault.jpg" ></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="https://www.autowoke.com/wp-content/uploads/2020/02/1.jpg"></ion-img>
+      </ion-slide>
+    </ion-slides>
+    <ion-icon  class="heart" size="large"  name="heart-circle-sharp"></ion-icon>
+</ion-content>
+
