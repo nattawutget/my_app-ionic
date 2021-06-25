@@ -17,8 +17,8 @@ export class RegisterPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
+      subHeader: 'ยังไม่สามารถสมัครสมาชิกได้',
+      message: 'เเอพพลิเคชั่นยังไม่สมบูรณ์',
       buttons: ['OK','Cancel']
     });
 
