@@ -42,6 +42,22 @@
   --ion-color-shade: var(--ion-color-google-shade) !important;
   --ion-color-tint: var(--ion-color-google-tint) !important;
 }
+.ion-color-lg {
+  --ion-color-base: var(--ion-color-lg) !important;
+  --ion-color-base-rgb: var(--ion-color-lg-rgb) !important;
+  --ion-color-contrast: var(--ion-color-lg-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-lg-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-lg-shade) !important;
+  --ion-color-tint: var(--ion-color-lg-tint) !important;
+}
+.ion-color-rg {
+  --ion-color-base: var(--ion-color-rg) !important;
+  --ion-color-base-rgb: var(--ion-color-rg-rgb) !important;
+  --ion-color-contrast: var(--ion-color-rg-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-rg-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-rg-shade) !important;
+  --ion-color-tint: var(--ion-color-rg-tint) !important;
+}
 .line {
   width: 75%;
   height: 1px;

@@ -19,7 +19,7 @@ export class RegisterPage implements OnInit {
       header: 'Alert',
       subHeader: 'Subtitle',
       message: 'This is an alert message.',
-      buttons: ['OK']
+      buttons: ['OK','Cancel']
     });
 
     await alert.present();
