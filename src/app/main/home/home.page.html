@@ -1,0 +1,75 @@
+<ion-header>
+                                                    <!--class="login" text-align="center"-->
+  <ion-toolbar>
+    <ion-title>{{namepage}}</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>   <!--เเถวเเนวนอน 1 เเถว -->
+    <ion-buttons slot="start">                                    <!-- เป็นกรอบ คล้าย div-->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-input type="text" padding-start placeholder="I'm shopping for..." class="search-bar"></ion-input>
+  </ion-toolbar>
+
+
+  <ion-toolbar>
+    <ion-segment >
+      <ion-segment-button *ngFor="let item of category;">
+        <ion-text>{{item.title}}</ion-text>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+
+<ion-menu contentId="main">
+                                         <!--side="start" menuId="custom" contentId="main" class="my-custom-menu"-->
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>                    <!--การเเสดงเเบบเรียงลงมาเป็นลำดับ คล้าย body-->
+    <ion-list>
+      <ion-item>                <!-- ให้ชุดคำสั่งที่อยู่ใน ion item เป็นกลุ่มข้อมูลเดียวกัน-->
+        <ion-avatar >
+          <img src="\assets\icon\logo.png">
+        </ion-avatar>
+        <ion-label>{{name}}</ion-label>
+      </ion-item>
+
+      <ion-menu-toggle *ngFor="let p of appPages;" >
+        <ion-item [routerLink]="[p.url]">
+        <ion-icon slot="start" [ios]="p.icon + '-outline'" ></ion-icon>         <!--[ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"-->
+          <ion-label>{{p.title}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu >
+<ion-router-outlet id="main"></ion-router-outlet>
+
+
+<ion-content class = "img">
+
+<ion-item >
+  <img src="\assets\imageProduct\hat.jpg" >
+</ion-item>
+<ion-item>
+  <img src="\assets\imageProduct\shirt.JPG" >
+</ion-item>
+<ion-item>
+  <img src="\assets\imageProduct\shorts.jpg" >
+</ion-item>
+<ion-item>
+  <img src="\assets\imageProduct\shoes.jpg" >
+</ion-item>
+
+</ion-content>
+
+
+
