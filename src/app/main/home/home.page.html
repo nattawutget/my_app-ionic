@@ -1,21 +1,21 @@
-<ion-header>
+<ion-header >
                                                     <!--class="login" text-align="center"-->
-  <ion-toolbar>
+  <ion-toolbar color="mytheme">
     <ion-title>{{namepage}}</ion-title>
   </ion-toolbar>
 
-  <ion-toolbar>   <!--เเถวเเนวนอน 1 เเถว -->
-    <ion-buttons slot="start">                                    <!-- เป็นกรอบ คล้าย div-->
-      <ion-menu-button></ion-menu-button>
+  <ion-toolbar color="mytheme">   <!--เเถวเเนวนอน 1 เเถว -->
+    <ion-buttons  slot="start">                                    <!-- เป็นกรอบ คล้าย div-->
+      <ion-menu-button ></ion-menu-button>
     </ion-buttons>
     <ion-input type="text" padding-start placeholder="I'm shopping for..." class="search-bar"></ion-input>
   </ion-toolbar>
 
 
-  <ion-toolbar>
+  <ion-toolbar color="mytheme">
     <ion-segment >
-      <ion-segment-button *ngFor="let item of category;">
-        <ion-text>{{item.title}}</ion-text>
+      <ion-segment-button  *ngFor="let item of category;">
+        <ion-text class="textsegment">{{item.title}}</ion-text>
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -28,7 +28,7 @@
 <ion-menu contentId="main">
                                          <!--side="start" menuId="custom" contentId="main" class="my-custom-menu"-->
   <ion-header>
-    <ion-toolbar color="tertiary">
+    <ion-toolbar color="mytheme">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>

@@ -10,7 +10,7 @@ export class HomePage implements OnInit {
   name='Thanachai Banpan';
   appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Shopping Cart', url: '', icon: 'cart' },
+    { title: 'Shopping Cart', url: '/home', icon: 'cart' },
     { title: 'Settings', url: '/setting', icon: 'settings' },
     { title: 'Logout', url: '/login', icon: 'log-out' },
   ];

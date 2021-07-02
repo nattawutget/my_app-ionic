@@ -1,37 +1,56 @@
-<ion-header class="head">
+<ion-header class="headder">
   <ion-toolbar color="mytheme">
     <ion-row justify-content-center>
-      <ion-img src="assets/icon/logo1.gif" class="head-image"></ion-img>
+      <ion-img src="assets/icon/logo2.gif" class="head-image"></ion-img>
     </ion-row>
   </ion-toolbar>
 </ion-header>
+
+<ng-content></ng-content>
+<a class="type-toggle" (click)="toggleShow()">
+   <ion-icon class="show-option" [hidden]="showPassword" name="eye-off-outline"></ion-icon>
+   <ion-icon class="hide-option" [hidden]="!showPassword" name="eye-outline"></ion-icon>
+</a>
 
 <ion-content class="auth-form">
   <ion-grid>
     <ion-row>
       <ion-col align-self-center>
-        <form>
+        <form >
           <ion-item lines="full">
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="text" required></ion-input>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input #UsernameInput type="text" required></ion-input>
           </ion-item>
+          
           <ion-item lines="full">
             <ion-label position="floating">Password</ion-label>
-            <ion-input type="password" required></ion-input>
+            <ion-input #PasswordInput clearInput  type="password" required ></ion-input>
+
+
           </ion-item>
-          <ion-button class="loginbt" type="submit" color="lg" expand="block">Login</ion-button>
+          <ion-button
+          class="buttonlogin" type="submit"  color="logincolor" expand="block"  (click)="login()">Login
+          </ion-button>
           <div class="line"></div>
 
-          <ion-row class="fg">
+          <ion-row class="facebookgooglebotton">
             <ion-col>
-              <ion-button expand="block" fill="outline" color="fb" no-padding><ion-img src="assets/img/facebook_logo.png" slot="start" class="logo" margin-end></ion-img>Facebook</ion-button>
+              <ion-button expand="block" fill="outline" color="facebookcolor" no-padding>
+                <ion-img src="assets/img/facebook_logo.png" slot="start" class="logo" margin-end>
+                </ion-img>
+                Facebook
+              </ion-button>
             </ion-col>
             <ion-col>
-              <ion-button class="google" expand="block"  color="google" no-padding><ion-img src="assets/img/google_logo.png" slot="start" class="logo" margin-end></ion-img>Google</ion-button>
+              <ion-button  expand="block" fill="outline" color="googlecolor" no-padding>
+                <ion-img src="assets/img/google_logo.png" slot="start" class="logo" margin-end>
+                </ion-img>
+                Google
+              </ion-button>
             </ion-col>
           </ion-row>
 
-          <ion-button [routerLink]="['/register']" expand="block" color="rg">Register</ion-button>
+          <ion-button expand="block" color="registerbotton" [routerLink]="['/register']">Register</ion-button>
           <ion-row>
             <ion-col class="forgotpassword-text">
               <a [routerLink]="['/forgot-password']">Forgot Password?</a>
