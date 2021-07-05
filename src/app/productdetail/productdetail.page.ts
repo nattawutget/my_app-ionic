@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, HomeTab } from '../data.service';
+import { DataService } from '../data.service';
+
+
 
 @Component({
   selector: 'app-productdetail',
@@ -7,27 +9,33 @@ import { DataService, HomeTab } from '../data.service';
   styleUrls: ['./productdetail.page.scss'],
 })
 export class ProductdetailPage implements OnInit {
-
-   menu = '';
   
+  itemTab = [
+  { title: 'รายละเอียดสินค้า' },
+  { title: 'คะแนนสินค้า' },
+  { title: 'รีวิวสินค้า' },
+  { title: 'รีวิวร้านค้า' }];
 
-  // itemTab: Array<any> = [
-  // { title: 'Overview' },
-  // { title: 'Related' },
-  // { title: 'Product Reviews' },
-  // { title: 'Store Reviews' }];
-
-  data: Array<HomeTab> = [];
+  productData:any;
   liked = false;
-  constructor( 
-    private dataService: DataService
-   ) { this.data = dataService.item_menu;
-       this.menu = this.data[0].title;
+
+  constructor(private dataService: DataService) { 
 
 }
 
-  ngOnInit() {
+ngOnInit() {
+  this.dataService.getProductData().subscribe((res)=>{
+    console.log(res)
+    this.productData = res
+    console.log(this.productData)
     
-  }
+  })
+
+}
+
  
+like() {
+  console.log('like')
+  this.liked = !this.liked;
+}
 }

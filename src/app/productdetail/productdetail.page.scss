@@ -23,3 +23,40 @@
     font-size:15px;
     margin-left:320px;
   }
+  .hover-buttons{
+    position: absolute;
+    bottom: -10px;
+    z-index: 10;
+    right: 15px;
+  }
+  .red{
+    color: red;
+  }
+  .fab {
+    width: 25px;
+    height: 25px;
+    padding: 9px;
+    border-radius: 25px;
+    margin-left: 6px;
+    border: .6px solid rgba(0, 0, 0, .3);
+    background-color: white !important;
+}
+.rowcolor{
+  background-color: red;
+}
+.price{
+  margin-left: 5px;
+}
+.card{
+  background-color:rgb(248, 244, 244);
+  color:black;
+  padding: 5px;
+  
+}
+.footer{
+  background-color:rgb(235, 201, 99);
+}
+.footerbtn{
+  width: 100%;
+  background-color:rgb(209, 49, 49);
+}

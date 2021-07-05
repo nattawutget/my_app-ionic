@@ -42,14 +42,18 @@
 
     <ion-toolbar>
       <ion-segment  mode="md" scrollable="true">
-        <ion-segment-button *ngFor="let item of data;">
+        <ion-segment-button *ngFor="let item of itemTab;">
           <ion-text>{{item.title}}</ion-text>
         </ion-segment-button>
       </ion-segment>
     </ion-toolbar>
   </ion-header>
-<ion-content>
 
+<!--  -->
+<ion-content>
+<ion-row>
+  <ion-col>
+    
     <ion-slides pager="true" [options]="slideOpts">
       <ion-slide>
         <ion-img src="https://i.ytimg.com/vi/oxmb4oVP2CA/maxresdefault.jpg" ></ion-img>
@@ -61,6 +65,51 @@
         <ion-img src="https://www.autowoke.com/wp-content/uploads/2020/02/1.jpg"></ion-img>
       </ion-slide>
     </ion-slides>
-    <ion-icon  class="heart" size="large"  name="heart-circle-sharp"></ion-icon>
+
+    <ion-row justify-content-end class="hover-buttons">
+      <ion-icon *ngIf="!liked" size="small" float-right name="heart-half-outline" class="fab" (click)="like()"></ion-icon>
+      <ion-icon *ngIf="liked" size="small" float-right name="heart" class="fab red" (click)="like()"></ion-icon>
+    </ion-row>
+
+  
+    </ion-col>
+    </ion-row>
+
+
+    <ion-card *ngFor="let item of productData" class="card"> 
+    <ion-row>
+      <ion-col>
+        <ion-text>{{item.name}}</ion-text>
+        <ion-text>{{item.price}}</ion-text>
+        </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-text  color="white">{{item.description}}</ion-text>
+            </ion-row>
+      </ion-card>
+
+
 </ion-content>
+
+<ion-footer class="footer">
+<ion-row>
+  
+  <ion-col  *ngFor="let item of productData">
+    <ion-row>
+      <ion-text  color="white">{{item.price}}</ion-text>
+    </ion-row>
+  </ion-col>
+
+  <ion-col size="4">
+    <ion-button  float-right class="footerbtn" color="orange" no-margin expand="block">Buy</ion-button>
+  </ion-col>
+
+</ion-row>
+</ion-footer>
+
+
+
+
 
