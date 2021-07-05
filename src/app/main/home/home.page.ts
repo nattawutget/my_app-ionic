@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-home',
@@ -21,9 +22,15 @@ export class HomePage implements OnInit {
     { title: 'Shoes'},
     { title: 'Sandals'}
   ];
-  constructor() { }
+  productData: any;
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getProduct().subscribe((res) => {
+      this.productData = res
+      // console.log(this.productData)
+    })
+
   }
 
 }

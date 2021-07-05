@@ -54,21 +54,28 @@
 <ion-router-outlet id="main"></ion-router-outlet>
 
 
-<ion-content class = "img">
+<ion-content >
+  <ion-row>
+  <ion-card class="card"  *ngFor="let item of productData"  >
+    <ion-col >
+      <img class="img" [src]="item.image" >
+    
 
-<ion-item routerLink="/productdetail">
-  <img src="\assets\imageProduct\hat.jpg" >
-</ion-item>
-<ion-item routerLink="/productdetail">
-  <img src="\assets\imageProduct\shirt.JPG" >
-</ion-item>
-<ion-item routerLink="/productdetail">
-  <img src="\assets\imageProduct\shorts.jpg" >
-</ion-item>
-<ion-item routerLink="/productdetail">
-  <img src="\assets\imageProduct\shoes.jpg" >
-</ion-item>
+    <ion-row class="product">
+    {{item.name}}
+    </ion-row>
 
+
+   <!-- <ion-item > -->
+     <ion-row class="price">
+      ฿ {{item.price}}
+    <!-- </ion-item> -->
+  </ion-row>
+
+  </ion-col>
+  
+  </ion-card>
+</ion-row>
 </ion-content>
 
 

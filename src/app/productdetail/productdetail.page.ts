@@ -17,14 +17,7 @@ export class ProductdetailPage implements OnInit {
   // { title: 'Product Reviews' },
   // { title: 'Store Reviews' }];
 
-  data: Array<HomeTab> = [];
-  liked = false;
-  constructor( 
-    private dataService: DataService
-   ) { this.data = dataService.item_menu;
-       this.menu = this.data[0].title;
-
-}
+ 
 
   ngOnInit() {
     

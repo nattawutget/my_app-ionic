@@ -12,3 +12,54 @@ html {
 .textsegment{
   color: rgb(252, 252, 252);
 }
+
+.imgtest {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
+
+
+.img {
+  height: 200px;
+  width: 200px;
+  margin-left: 60px;
+}
+
+.card{
+  margin-left: 25;
+  height: cover;
+  width: 340px;
+  margin-top: 10px;
+}
+
+
+
+.row {
+ display:table-row;
+
+  }
+
+.product{
+  font-size:20px;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+.price{
+  margin-top: 10px;
+ color: red;
+ margin-left: 10px;
+}
+
+.cast{
+  margin-left: 200px;
+  size: 20px;
+}
+
+.textsegment{
+  color: rgb(252, 252, 252);
+}
