@@ -22,6 +22,13 @@ export class ProductdetailPage implements OnInit {
   constructor(private dataService: DataService) { 
 
 }
+  // itemTab: Array<any> = [
+  // { title: 'Overview' },
+  // { title: 'Related' },
+  // { title: 'Product Reviews' },
+  // { title: 'Store Reviews' }];
+
+ 
 
 ngOnInit() {
   this.dataService.getProductData().subscribe((res)=>{
