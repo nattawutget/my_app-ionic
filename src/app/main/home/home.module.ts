@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { SettingPage } from '../setting/setting.page';
+import { SideMenuPageModule } from 'src/app/side-menu/side-menu.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SettingPage } from '../setting/setting.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SideMenuPageModule
   ],
   declarations: [HomePage],
   exports:[HomePage]   //เรียกใช้ component--

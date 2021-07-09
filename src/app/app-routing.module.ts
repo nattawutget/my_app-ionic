@@ -30,7 +30,15 @@ const routes: Routes = [
   {
     path: 'productdetail',
     loadChildren: () => import('./productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
+  },  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'side-menu',
+    loadChildren: () => import('./side-menu/side-menu.module').then( m => m.SideMenuPageModule)
   }
+
 
 
 
