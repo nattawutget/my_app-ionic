@@ -1,115 +1,265 @@
-<ion-header class="header">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button routerLink="/home"></ion-back-button>
-    </ion-buttons>
+<ion-header>
+  <ion-toolbar color="mytheme">
 
-    <ion-title  class="texttitle">รายละเอียดสินค้า</ion-title>
+    <ion-row>
+      <ion-col>
+        <ion-buttons>
 
-    <ion-buttons slot="end">
-      <ion-icon name="cart" slot="icon-only" defaultHref="ใส่พาร์ทตะกร้า" class="tobbtn"></ion-icon>
-    </ion-buttons>
+          <ion-button (click)="backClicked()">
+            <ion-icon name="chevron-back-circle-outline"></ion-icon>
+          </ion-button>
+          <ion-title slot="start" class="texttitle">รายละเอียดสินค้า</ion-title>
 
-    <ion-buttons slot="end">
-      <ion-icon name="search" slot="icon-only" defaultHref="ใส่พาร์ทเซิร์ท" class="tobbtn" ></ion-icon>
-    </ion-buttons>
-  </ion-toolbar>
-  <!-- <ion-row>
-    <ion-segment class="button" *ngFor="let i of itemTab">
-      <ion-segment-button>
-      <ion-lable>{{i.title}}</ion-lable>
+          <ion-buttons slot="end">
+            <ion-icon name="cart" slot="icon-only" defaultHref="ใส่พาร์ทตะกร้า" class="tobbtn"></ion-icon>
+          </ion-buttons>
+
+          <ion-buttons slot="end">
+            <ion-icon name="search" slot="icon-only" defaultHref="ใส่พาร์ทเซิร์ท" class="tobbtn"></ion-icon>
+          </ion-buttons>
+
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-segment [(ngModel)]="productdetail" mode="md" scrollable="true">
+      <ion-segment-button value="detailproduct">
+        <strong style="color: aliceblue;">รายละเอียดสินค้า</strong>
       </ion-segment-button>
-      </ion-segment>
-    </ion-row> -->
+      <ion-segment-button value="reviewproduct">
+        <strong style="color: aliceblue;">คะแนนสินค้า</strong>
+      </ion-segment-button>
+    </ion-segment>
 
-    <!-- <ion-toolbar >
-      <ion-segment (ionChange)="seg($event)" mode="md" scrollable="true" id="dag" class="segSection">
-        <ion-segment-button [attr.id]="'seg_' + i" *ngFor="let item of data; let i = index;" no-margin no-padding (ionSelect)="update(i)" class="my-btn"
-          [value]="item.title" [ngClass]="{'btn-active':menu == item.title}">
-          <ion-text padding-horizontal class="text">{{item.title}}</ion-text>
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar> -->
+  </ion-toolbar>
+</ion-header>
 
-      <!-- <ion-toolbar >
-      <ion-segment (ionChange)="seg($event)" mode="md" scrollable="true" id="dag" class="segSection">
-        <ion-segment-button *ngFor="let item of data;" no-margin no-padding class="my-btn"
-          [value]="item.title" [ngClass]="{'btn-active':menu == item.title}">
-          <ion-text padding-horizontal class="text">{{item.title}}</ion-text>
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar> -->
-
-    <ion-toolbar>
-      <ion-segment  mode="md" scrollable="true">
-        <ion-segment-button *ngFor="let item of itemTab;">
-          <ion-text>{{item.title}}</ion-text>
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>
-  </ion-header>
-
-<!--  -->
-<ion-content>
-<ion-row>
-  <ion-col>
-    
-    <ion-slides pager="true" [options]="slideOpts">
+<!-- <ion-content>
+  <div [ngSwitch]="detailproduct" >
+    <ion-slides pager="true" [options]="slideOpts" *ngSwitchCase="'detailproduct'">
       <ion-slide>
-        <ion-img src="https://i.ytimg.com/vi/oxmb4oVP2CA/maxresdefault.jpg" ></ion-img>
+        <ion-img src="https://i.ytimg.com/vi/oxmb4oVP2CA/maxresdefault.jpg"></ion-img>
       </ion-slide>
       <ion-slide>
-       <ion-img src="https://i.ytimg.com/vi/IPRsiRFoo3Q/maxresdefault.jpg" ></ion-img>
+        <ion-img src="https://i.ytimg.com/vi/IPRsiRFoo3Q/maxresdefault.jpg"></ion-img>
       </ion-slide>
       <ion-slide>
         <ion-img src="https://www.autowoke.com/wp-content/uploads/2020/02/1.jpg"></ion-img>
       </ion-slide>
     </ion-slides>
+  </div>
 
-    <ion-row justify-content-end class="hover-buttons">
-      <ion-icon *ngIf="!liked" size="small" float-right name="heart-half-outline" class="fab" (click)="like()"></ion-icon>
-      <ion-icon *ngIf="liked" size="small" float-right name="heart" class="fab red" (click)="like()"></ion-icon>
-    </ion-row>
 
-  
+</ion-content> -->
+
+
+
+<ion-content padding>
+  <div [ngSwitch]="productdetail">
+    <div *ngSwitchCase="'detailproduct'">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <ion-img class="img1" src="assets\imageProduct\p11.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img class="img2" src="assets\imageProduct\p22.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img class="img3" src="assets\imageProduct\p33.jpg"></ion-img>
+        </ion-slide>
+      </ion-slides>
+      <ion-row justify-content-end class="heart-buttons">
+        <ion-icon class="heart1" *ngIf="!liked" size="small" float-right name="heart-half-outline" class="fab"
+          (click)="like()">
+        </ion-icon>
+        <ion-icon class="heart2" *ngIf="liked" size="small" float-right name="heart" class="fab red" (click)="like()">
+        </ion-icon>
+      </ion-row>
+
+      <ion-list *ngFor="let item of productData" class="card">
+        <ion-row>
+          <ion-col>
+            <ion-text>{{item.p_name}}</ion-text>
+            <ion-text>{{item.p_price}}<br><br></ion-text>
+            <ion-text>Detail<br><br>{{item.p_detail}}</ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+          
+      <ion-footer class="footer">
+        <ion-toolbar>
+          <ion-button float-right class="footerbtn" color="orange" no-margin expand="block">Buy</ion-button>
+        </ion-toolbar>
+      </ion-footer>
+       
+    </div>
+
+
+
+
+    <div *ngSwitchCase="'reviewproduct'">
+
+      <ion-row>
+        <ion-col>
+          <ion-row>
+            <ion-text class="textHeader">ให้คะแนนสินค้านี้</ion-text>
+          </ion-row>
+          <ion-row>
+            <div class="star">
+              <ion-icon color="primary" *ngFor="let item of list;let i = index"
+                [name]="condition <= i? 'star-outline' :'star' " (click)="review(i)">
+              </ion-icon>
+            </div>
+          </ion-row>
+          <ion-row *ngFor="let item of productData">
+            <ion-text class="rating">{{item.rating}}</ion-text>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <div class="linereview"></div>
+
+      <ion-item *ngFor="let item of productData">
+        <ion-row>
+          <ion-buttons>
+            <ion-col>
+              <ion-avatar class="avatar1" >
+                <img src="assets\imageProduct\tomholland.jpg">
+              </ion-avatar>
+            </ion-col>
+          </ion-buttons>
+          <ion-col>
+            <ion-text class="namereview"><strong>{{item.namereview}}<br></strong></ion-text>
+            <ion-text>{{item.comment}}</ion-text>
+            <ion-img class="commentimg1" src="assets\imageProduct\p33.jpg"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+      <ion-item *ngFor="let item of productData">
+        <ion-row>
+          <ion-buttons>
+            <ion-col>
+              <ion-avatar class="avatar1" >
+                <img src="assets\imageProduct\tonystark.jpg">
+              </ion-avatar>
+            </ion-col>
+          </ion-buttons>
+          <ion-col>
+            <ion-text class="namereview"><strong>{{item.namereview2}}<br></strong></ion-text>
+            <ion-text>{{item.comment2}}</ion-text>
+            <ion-img class="commentimg1" src="assets\imageProduct\p22.jpg"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+
+      
+
+
+
+    </div>
+  </div>
+</ion-content>
+<!-- 
+<div [ngSwitch]="reviewproduct">
+<ion-content *ngSwitchCase="'reviewproduct'">
+  <ion-row>
+    <ion-col>
+      <ion-row>
+        <ion-text class="textHeader">ให้คะแนนสินค้านี้</ion-text>
+      </ion-row>
+      <ion-row>
+        <div class="star">
+          <ion-icon color="primary" *ngFor="let item of list;let i = index"
+            [name]="condition <= i? 'star-outline' :'star' " (click)="review(i)">
+          </ion-icon>
+        </div>
+      </ion-row>
+      <ion-row *ngFor="let item of productData">
+        <ion-text class="rating">{{item.rating}}</ion-text>
+      </ion-row>
     </ion-col>
+  </ion-row>
+  <div class="linereview"></div>
+  <ion-item *ngFor="let item of productData">
+    <ion-row>
+      <ion-buttons>
+      <ion-col>
+        <ion-avatar class="avatar1">
+        <img src="https://www.thaipost.net/main/uploads/photos/big/20210124/image_big_600d4db1a0371.jpg">
+        </ion-avatar>
+      </ion-col>
+    </ion-buttons>
+      <ion-col>
+        <ion-text class="namereview"><strong>{{item.namereview}}<br></strong></ion-text>
+        <ion-text>{{item.comment}}</ion-text>
+        <ion-img class="commentimg1"src="https://www.autowoke.com/wp-content/uploads/2020/02/1.jpg"></ion-img>
+      </ion-col>
     </ion-row>
+  </ion-item>
+</ion-content>
+</div> -->
+<!-- 
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <ion-img src="https://i.ytimg.com/vi/oxmb4oVP2CA/maxresdefault.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img src="https://i.ytimg.com/vi/IPRsiRFoo3Q/maxresdefault.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img src="https://www.autowoke.com/wp-content/uploads/2020/02/1.jpg"></ion-img>
+        </ion-slide>
+      </ion-slides>
+
+      <ion-row justify-content-end class="hover-buttons">
+        <ion-icon *ngIf="!liked" size="small" float-right name="heart-half-outline" class="fab" (click)="like()">
+        </ion-icon>
+        <ion-icon *ngIf="liked" size="small" float-right name="heart" class="fab red" (click)="like()"></ion-icon>
+      </ion-row>
 
 
-    <ion-card *ngFor="let item of productData" class="card"> 
+    </ion-col>
+  </ion-row>
+
+
+  <ion-card *ngFor="let item of productData" class="card">
     <ion-row>
       <ion-col>
         <ion-text>{{item.name}}</ion-text>
         <ion-text>{{item.price}}</ion-text>
-        </ion-col>
-        </ion-row>
+      </ion-col>
+    </ion-row>
 
 
-        <ion-row>
-          <ion-text  color="white">{{item.description}}</ion-text>
-            </ion-row>
-      </ion-card>
+    <ion-row>
+      <ion-text color="white">{{item.description}}</ion-text>
+    </ion-row>
+  </ion-card>
 
 
 </ion-content>
 
 <ion-footer class="footer">
-<ion-row>
-  
-  <ion-col  *ngFor="let item of productData">
-    <ion-row>
-      <ion-text  color="white">{{item.price}}</ion-text>
-    </ion-row>
-  </ion-col>
+  <ion-row>
 
-  <ion-col size="4">
-    <ion-button  float-right class="footerbtn" color="orange" no-margin expand="block">Buy</ion-button>
-  </ion-col>
+    <ion-col *ngFor="let item of productData">
+      <ion-row>
+        <ion-text color="white">{{item.name}}</ion-text>
+      </ion-row>
+    </ion-col>
 
-</ion-row>
-</ion-footer>
+    <ion-col size="4">
+      <ion-button float-right class="footerbtn" color="orange" no-margin expand="block">Buy</ion-button>
+    </ion-col>
 
-
-
+  </ion-row>
+</ion-footer> -->
 
 

@@ -1,0 +1,30 @@
+<ion-header class="header">
+  <ion-toolbar color="mytheme">
+
+<ion-row>
+<ion-col>
+  <ion-buttons>
+    <ion-button (click)="backClicked()" ><ion-icon name="chevron-back-circle-outline"></ion-icon></ion-button>
+    <ion-title slot="start" class="texttitle">รายละเอียดสินค้า</ion-title>
+  </ion-buttons>
+</ion-col>
+</ion-row>
+
+
+    <ion-buttons slot="end">
+      <ion-icon name="cart" slot="icon-only" defaultHref="ใส่พาร์ทตะกร้า" class="tobbtn"></ion-icon>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-icon name="search" slot="icon-only" defaultHref="ใส่พาร์ทเซิร์ท" class="tobbtn"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <ion-toolbar color="mytheme">
+    <ion-segment mode="md" scrollable="true">
+      <ion-segment-button *ngFor="let item of itemTab;">
+        <ion-text class="title">{{item.title}}</ion-text>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
