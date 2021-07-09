@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="mytheme">
+    <ion-title>CART</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<app-side-menu>
+
+</app-side-menu>
+
+<ion-content>
+
+  <ion-item>
+    <ion-buttons>
+      <ion-col>
+        <ion-row>
+          <ion-img class="imgducky"
+            src="https://www.duckychannel.com.tw/upload/2020_12_042/20201204155721bs7fsknHg4.png">
+          </ion-img>
+        </ion-row>
+      </ion-col>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-label *ngFor="let item of cart" class="dataorder">
+        <p class="textheadorder">{{item.product}}</p>
+        <p class="textsuborder"> price: {{item.price}}<a>$</a></p>
+        <p class="textsuborder"> shipping: {{item.shipping}}<a>$</a></p>
+      </ion-label>
+    </ion-buttons>
+
+    <ion-list class="selectoption">
+      <ion-item>
+        <ion-select value="1" okText="Okay" cancelText="Dismiss">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-item>
+
+</ion-content>
+
+<!-- *ngFor="let item of cart" -->
+<form>
+  <ion-item>
+    <ion-col>
+      <ion-row>
+        <span>Item Price</span>
+        <!-- <span class="Total"> {{item.price}} <a>$</a></span> -->
+      </ion-row>
+      <ion-row>
+        <span>Shipping</span>
+        <!-- <span class="shipping"> {{item.shipping}} <a>$</a></span> -->
+      </ion-row>
+      <ion-row>
+        <span>Item Total</span>
+        <!-- <span class="Item-Total"> {{item.sum}} <a>$</a></span> -->
+      </ion-row>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col>
+      <small>
+        <ion-text>
+          By tapping 'Checkout' you aggree to the
+          <a>Terms of Use</a> and <a>Privacy Policy</a>
+        </ion-text>
+      </small>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col class="returnandrefund">
+        <a class="returnandrefund-text"> 30 Day Free Return and Refund</a>
+    </ion-col>
+  </ion-item>
+
+
+  <ion-button expand="full" color="danger" no-padding>
+    <a class="Checkout">Checkouts</a>
+  </ion-button>
+</form>

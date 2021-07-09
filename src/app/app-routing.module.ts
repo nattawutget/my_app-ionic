@@ -32,9 +32,26 @@ const routes: Routes = [
     loadChildren: () => import('./productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
   },
   {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./main/setting/setting.module').then( m => m.SettingPageModule)
+  },
+  {
+    path: 'productdetail',
+    loadChildren: () => import('./productdetail/productdetail.module').then( m => m.ProductdetailPageModule)
+  },
+  {
     path: 'layout',
     loadChildren: () => import('./layout/layout.module').then( m => m.LayoutPageModule)
+  },
+  {
+    path: 'side-menu',
+    loadChildren: () => import('./side-menu/side-menu.module').then( m => m.SideMenuPageModule)
   }
+
 
 
 

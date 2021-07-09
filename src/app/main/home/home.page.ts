@@ -11,7 +11,7 @@ export class HomePage implements OnInit {
   name='Thanachai Banpan';
   appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Shopping Cart', url: '/home', icon: 'cart' },
+    { title: 'Shopping Cart', url: '/cart', icon: 'cart' },
     { title: 'Settings', url: '/setting', icon: 'settings' },
     { title: 'Logout', url: '/login', icon: 'log-out' },
   ];
@@ -26,11 +26,33 @@ export class HomePage implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getProductData().subscribe((res) => {
-      this.productData = res
+    this.dataService.getProductData().subscribe((res:any) => {
+
+      this.productData = res.data
       // console.log(this.productData)
     })
 
+  }
+
+  
+  allData() {
+    this.dataService.getProductData().subscribe((res: any) => {
+      this.productData = res.data
+    })
+  }
+
+  filterData(category: any) {
+    // console.log(category)
+    // if (category.name === "home") {
+    //   this.dataService.getProduct().subscribe((res: any) => {
+    //     return this.productData = res.data
+    //   })
+    // }
+    this.dataService.getProductData().subscribe((res: any) => {
+      this.productData = res.data.filter((res) => {
+        return res.category === category
+      })
+    })
   }
 
 }
