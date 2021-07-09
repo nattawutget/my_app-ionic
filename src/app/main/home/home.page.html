@@ -14,9 +14,21 @@
 
   <ion-toolbar color="mytheme">
     <ion-segment >
-      <ion-segment-button  *ngFor="let item of category;">
-        <ion-text class="textsegment">{{item.title}}</ion-text>
-      </ion-segment-button>
+      <ion-segment-button  (click)="allData()" >
+        <ion-text class="textsegment" >All</ion-text>
+      </ion-segment-button >
+      <ion-segment-button  (click)="filterData('mouse')" >
+        <ion-text class="textsegment" >Mouse</ion-text>
+      </ion-segment-button >
+      <ion-segment-button  (click)="filterData('keyboard')" >
+        <ion-text class="textsegment">Keyboard</ion-text>
+      </ion-segment-button >
+      <ion-segment-button  (click)="filterData('headphone')" >
+        <ion-text class="textsegment" >Headphone</ion-text>
+      </ion-segment-button >
+      <ion-segment-button  (click)="filterData('mousepad')" >
+        <ion-text class="textsegment" >Mousepad</ion-text>
+      </ion-segment-button >
     </ion-segment>
   </ion-toolbar>
 </ion-header>
@@ -60,21 +72,15 @@
   <ion-card class="card"  *ngFor="let item of productData"  >
     <ion-col >
       <img class="img" [src]="item.images" >
-
-
     <ion-row class="product">
-    {{item.product}}
+    {{item.name}}
     </ion-row>
-
-
    <!-- <ion-item > -->
      <ion-row class="price">
       ฿ {{item.price}}
     <!-- </ion-item> -->
   </ion-row>
-
   </ion-col>
-
   </ion-card>
 </ion-row>
 </ion-content>

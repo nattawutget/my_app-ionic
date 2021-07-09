@@ -34,4 +34,25 @@ export class HomePage implements OnInit {
 
   }
 
+  
+  allData() {
+    this.dataService.getProductData().subscribe((res: any) => {
+      this.productData = res.data
+    })
+  }
+
+  filterData(category: any) {
+    // console.log(category)
+    // if (category.name === "home") {
+    //   this.dataService.getProduct().subscribe((res: any) => {
+    //     return this.productData = res.data
+    //   })
+    // }
+    this.dataService.getProductData().subscribe((res: any) => {
+      this.productData = res.data.filter((res) => {
+        return res.category === category
+      })
+    })
+  }
+
 }
