@@ -9,7 +9,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getProductData() {
-    return this.http.get('http://localhost:3000/api/services')
+    return this.http.get('http://localhost:3000/api/gamingservices')
   }
 
 //   terms_of_use = 'The Terms and Conditions agreement can act as a legal contract between you, the mobile app owner or developer, and the users of your app. Like a Terms and Conditions for a website, this agreement for a mobile app would set the rules and terms that users must follow in order to use your app.' +
